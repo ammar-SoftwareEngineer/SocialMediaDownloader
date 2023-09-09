@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="theme-color" content="#FF8214">
+  <!-- External file css -->
+  <link rel="stylesheet" href="css/SMD-arabic.css">
+  <!-- file normalize css  -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <!-- icons -->
+  <link rel="stylesheet" href="css/all.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="main.js"></script>
+  <!-- icon title -->
+  <link rel="icon" href="images/logo.svg">
+  <title>SMD</title>
+</head>
+
+<body>
+  <!-- start header -->
+  <header class="home-menu" id="home">
+    <div class="container">
+      <div class="logo">
+        <img class="my-logo" src="images/Laye copyr.png" alt="">
+      </div>
+      <nav>
+        <i class="fas fa-bars  toggle-button" onclick="openMenu()"></i>
+        <ul class="main-nav" id="main-nav">
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#help">المساعدة</a></li>
+          <li><a href="#about">نبذة عن</a></li>
+          <li><a href="#contact">التواصل</a></li>
+          <li class="setting one"><a href="#langauge" class="click"><i class="fas fa-globe"></i>
+              اللغة <i class="fas fa-angle-down"></i>
+            </a>
+            <ul>
+              <li><a href="arabic.html" id="ar">العربية</a></li>
+              <li><a href="index.html" id="en">الانجليزية</a></li>
+            </ul>
+          </li>
+          <li class="setting two"><a href="#theme"><i class="fas fa-brush"></i> الخلفية <i
+                class="fas fa-angle-down"></i>
+            </a>
+            <ul>
+              <li><a href="#" onclick="darkMode()">داكن</a></li>
+              <li><a href="#" onclick="lightMode()">فاتح</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- end  header -->
+  <!-- start landing -->
+  <div class="landing">
+    <div class="container">
+      <div class="main-text">
+        <h1>تنزيل الوسائط الاجتماعية</h1>
+        <p>مرحبًا بك في تنزيل الوسائط الاجتماعية ، حيث يمكنك تنزيل مقاطع الفيديو وتحويلها وترجمتها</p>
+        <form action="">
+          <input type="url" class="link" placeholder="الصق الرابط هنا">
+          <button type="submit"><i class="fas fa-arrow-alt-circle-down"></i><span> تحميل</span></button>
+        </form>
+      </div>
+      <div class="social">
+        <span class="icon"><a href="https://ar-ar.facebook.com/" target="_blank"><i
+              class="fa fa-facebook-f"></i></a></span>
+        <span class="icon"><a href="https://twitter.com/login" target="_blank"><i class="fab fa-twitter"></i></a></span>
+        <span class="icon"><a href="https://eg.linkedin.com/" target="_blank"><i
+              class="fab fa-linkedin-in"></i></a></span>
+        <span class="icon"><a href="https://www.youtube.com/?hl=ar" target="_blank"><i
+              class="fab fa-youtube"></i></a></span>
+        <span class="icon"><a href="https://www.instagram.com/" target="_blank"><i
+              class="fab fa-instagram"></i></a></span>
+        <span class="icon"><a href="https://accounts.snapchat.com/" target="_blank"><i
+              class="fa fa-snapchat-ghost"></i></a></span>
+        <span class="icon"><a href="https://www.tiktok.com/ar/" target="_blank"><i class="fab fa-tiktok"></i></a></span>
+      </div>
+      <div class="download">
+        <ul>
+          <li class="down" onclick="openList1()"><i class="fas fa-download"></i>تحميل MP4 او MP3 <i
+              class="fas fa-arrow-circle-down one"></i></li>
+          <li class="audio" onclick="openList2()"><i class="fas fa-file-audio"></i>التحويل الى موسيقى <i
+              class="fas fa-arrow-circle-down two"></i></li>
+          <li class="trans" onclick="openList3()"><i class="fas fa-language"></i>ترجمة الفيديو <i
+              class="fas fa-arrow-circle-down three"></i></li>
+        </ul>
+      </div>
+      <div class="quality-download" id="ullist">
+        <ul class="mp4">
+          <div>MP4</div>
+          <li>360P</li>
+          <li>480P</li>
+          <li>720HD</li>
+          <li>1080HD</li>
+        </ul>
+        <ul class="mp3">
+          <div>MP3</div>
+          <li>70k</li>
+          <li>128k</li>
+          <li>160k</li>
+          <li>320k</li>
+        </ul>
+      </div>
+      <div class="quality-audio" id="ullist1">
+        <ul>
+          <div>MP3</div>
+          <li>70k</li>
+          <li>128k</li>
+          <li>160k</li>
+          <li>320k</li>
+        </ul>
+      </div>
+      <div class="quality-translate" id="ullist2">
+        <ul class="mp4-two">
+          <div>MP4</div>
+          <li>360P</li>
+          <li>480P</li>
+          <li>720HD</li>
+          <li>1080HD</li>
+        </ul>
+        <ul class="translate">
+          <div>ترجمة</div>
+          <li>العربية</li>
+          <li>الانجليزية</li>
+          <li>الالمانية</li>
+          <li>الاسبانية</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- end landing -->
+  <!-- start help -->
+  <div class="help" id="help">
+    <div class="container">
+      <div class="text">
+        <h2>المساعدة</h2>
+        <p>التحميل من وسائط التنزيل الاجتماعية</p>
+      </div>
+      <div class="imgs-container">
+        <div class="box">
+          <img src="images/help1.svg" alt="">
+          <div class="caption">
+            <h4> 1. انسخ الرابط</h4>
+            <p>افتح الصفحة الاجتماعية التى تحتوي على مقطع فيديو تريد حفظه وانسخ الرابط الخاص به ثم عد الى SMD.github</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="images/help2.svg" alt="">
+          <div class="caption">
+            <h4> 2. الصق الرابط في حقل الإدخال</h4>
+            <p>الصق الرابط في حقل الإدخال أعلى الصفحة وانقر على الزر الأيمن
+              لتشغيل عملية التنزيل.</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="images/help4.svg" alt="">
+          <div class="caption">
+            <h4>3. اختر أحد التنزيلات</h4>
+            <p>إذا كنت تريد تنزيل مقطع فيديو أو تحويله إلى موسيقى أو ترجمته</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="images/help5.svg" alt="">
+          <div class="caption">
+            <h4>4. قم بتنزيل MP4 أو MP3</h4>
+            <p>لدينا تنزيلات فيديو أو موسيقى عالية الجودة في اختيار تنزيل mp4 أو mp3</p>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="images/help6.svg" alt="">
+          <div class="caption">
+            <h4>5. التحويل إلى الموسيقى</h4>
+            <p>يمكن تحويل الفيديو الى موسيقى وبجودة عالية</p>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="images/help7.svg" alt="">
+          <div class="caption">
+            <h4>6. ترجمة الفيديو </h4>
+            <p>لدينا تنزيلات فيديو وترجمات بلغات متعددة في اختيار تنزيل mp4 وترجمات
+              وليس مجرد خيار واحد</p>
+          </div>
+        </div>
+        <div class="box">
+          <img src="images/help3.svg" alt="">
+          <div class="caption">
+            <h4>7. انقر فوق زر التنزيل</h4>
+            <p>لتلاحظ أنه سيتم تحديد أفضل جودة بشكل افتراضي ولكن إذا كنت ترغب في جودة معينة أو
+              التنسيق ، هناك العديد من الخيارات التي يمكنك الاختيار من بينها.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- end help  -->
+    <!-- start about -->
+    <div class="about" id="about">
+      <div class="container">
+        <div class="text">
+          <h2>معلومات عنا</h2>
+          <p>معرفة كل شئ عن الموقع وبعض الاسئلة عنه
+            ومن هم مطورو الموقع</p>
+        </div>
+        <div class="questions">
+          <h3>ما هي الأسئلة التي يريد الناس أن يعرفوها عن الموقع؟</h3>
+          <ul>
+            <li onclick="plusOpen()">هل يمكن تنزيل مقاطع فيديو من مواقع التواصل الاجتماعي وتحويلها إلى موسيقى؟ <i
+                class="fas fa-plus" id="arrow"></i></li>
+            <p id="my-p"> الجواب: نعم ، وبجودة عالية أيضا</p>
+            <li onclick="plusOpen1()">هل الموقع يدعم جميع اللغات؟<i class="fas fa-plus" id="arrow1"></i></li>
+            <p id="my-p1">الإجابة: لا يدعم كل اللغات لكننا سنفعله قريبًا</p>
+            <li onclick="plusOpen2()">كم مرة يمكنني التنزيل؟ <i class="fas fa-plus" id="arrow2"></i></li>
+            <p id="my-p2">الجواب: غير محدود</p>
+            <li onclick="plusOpen3()">هل يدعم الموقع جودة التحميل 4k؟<i class="fas fa-plus" id="arrow3"></i></li>
+            <p id="my-p3"> الإجابة: لا يدعم 4K لكننا سنفعله قريبًا</p>
+            <li onclick="plusOpen4()">كيف يتم تحميل الموقع بسرعة؟<i class="fas fa-plus" id="arrow4"></i></li>
+            <p id="my-p4">الإجابة: نعم ، يمكنك تنزيل أكثر من مقطع في نفس الوقت</p>
+          </ul>
+        </div>
+        <div class="images">
+          <div class="overliy"></div>
+          <img src="images/marketing-employee-working-on-marketing-strategy.svg" alt="">
+        </div>
+      </div>
+    </div>
+    <!-- end about -->
+    <!-- start team -->
+    <div class="team">
+      <div class="container">
+        <h4>التق بفريقنا</h4>
+      </div>
+      <div class="landing-team">
+        <div class="box">
+          <div class="container">
+            <div class="box-team">
+              <div class="team-deveolp">
+                <img src="images/abdalrahem.svg" alt="">
+                <div class="size">
+                  <h5>عبدالرحيم احمد</h5>
+                  <p>مطور الواجهة الخلفية</p>
+                  <span class="icon"><a href="https://twitter.com/login" target="_blank"><i
+                        class="fab fa-twitter"></i></a></span>
+                  <span class="icon"><a href="https://eg.linkedin.com/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a></span>
+                </div>
+              </div>
+            </div>
+            <div class="box-team">
+              <div class="team-deveolp">
+                <img src="images/ashref.svg" alt="">
+                <div class="size">
+                  <h5>اشرف السيد</h5>
+                  <p>مطور الواجهة الخلفية</p>
+                  <span class="icon"><a href="https://twitter.com/login" target="_blank"><i
+                        class="fab fa-twitter"></i></a></span>
+                  <span class="icon"><a href="https://eg.linkedin.com/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a></span>
+                </div>
+              </div>
+            </div>
+            <div class="box-team">
+              <div class="team-deveolp">
+                <img src="images/yo.svg" alt="">
+                <div class="size">
+                  <h5>يوسف منصور</h5>
+                  <p>مطور الواجهة الخلفية</p>
+                  <span class="icon"><a href="https://twitter.com/login" target="_blank"><i
+                        class="fab fa-twitter"></i></a></span>
+                  <span class="icon"><a href="https://eg.linkedin.com/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a></span>
+                </div>
+              </div>
+            </div>
+            <div class="box-team">
+              <div class="team-deveolp">
+                <img src="images/jo.svg" alt="">
+                <div class="size">
+                  <h5>جوزيف ريسلة</h5>
+                  <p>مطور الواجهة الخلفية</p>
+                  <span class="icon"><a href="https://twitter.com/login" target="_blank"><i
+                        class="fab fa-twitter"></i></a></span>
+                  <span class="icon"><a href="https://eg.linkedin.com/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a></span>
+                </div>
+              </div>
+            </div>
+            <div class="box-team">
+              <div class="team-deveolp">
+                <img src="images/ammar.svg" alt="">
+                <div class="size">
+                  <h5>عمار ياسر</h5>
+                  <p>مطور الواجهة الامامية
+                    <br>
+                    تجربة وتصميم واجهة المستخدم
+                  </p>
+                  <span class="icon"><a href="https://twitter.com/login" target="_blank"><i
+                        class="fab fa-twitter"></i></a></span>
+                  <span class="icon"><a href="https://eg.linkedin.com/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a></span>
+                </div>
+              </div>
+            </div>
+            <div class="box-team">
+              <div class="team-deveolp">
+                <img src="images/ahmed.svg" alt="">
+                <div class="size">
+
+                  <h5>احمد اشرف</h5>
+                  <p>مطور الواجهة الامامية</p>
+                  <span class="icon"><a href="https://twitter.com/login" target="_blank"><i
+                        class="fab fa-twitter"></i></a></span>
+                  <span class="icon"><a href="https://eg.linkedin.com/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a></span>
+                </div>
+              </div>
+            </div>
+            <div class="box-team">
+              <div class="team-deveolp">
+                <img src="images/Ali.svg" alt="">
+                <div class="size">
+                  <h5>علي محمد</h5>
+                  <p>مطور الواجهة الامامية</p>
+                  <span class="icon"><a href="https://twitter.com/login" target="_blank"><i
+                        class="fab fa-twitter"></i></a></span>
+                  <span class="icon"><a href="https://eg.linkedin.com/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end team -->
+      <!-- start content -->
+      <div class="contact" id="contact">
+        <div class="container">
+          <div class="text">
+            <h2>اتصل بنا</h2>
+            <p>
+              مشاركة رأيك على الموقع يجعل الأمر أسهل
+              لكي نساعدك ونطور أنفسنا
+            </p>
+          </div>
+
+          <div class="content">
+            <form action="">
+              <input class="main-input" type="text" name="name" placeholder="اسمك">
+              <input class="main-input" type="email" name="mail" placeholder="ايميلك">
+              <textarea class="main-input" name="message" placeholder="رسالتك "></textarea>
+              <input type="submit" value="ارسال الرسالة">
+            </form>
+            <div class="info">
+              <h4>ابقى على تواصل</h4>
+              <span class="phone">+00 123.456.789</span>
+              <span class="phone">+00 123.456.789</span>
+              <h4>اين نحن</h4>
+              <address>
+                الكيلو 32 طريق مصر اسماعيلية الصحراوى
+                <br>
+                العبور , القاهرة
+                <br>
+                جمهورية مصر العربية
+              </address>
+            </div>
+          </div>
+          <div class="social">
+            <span class="icon"><a href="#" target="_blank"><i class="material-icons">phone</i></a></span>
+            <p>الهاتف</p>
+            <span class="icon"><a href="#" target="_blank"><i class="material-icons ">whatsapp</i></a></span>
+            <p>واتس اب</p>
+            <span class="icon"><a href="#" target="_blank"><i class="material-icons">mail</i></a></span>
+            <p>الايميل</p>
+          </div>
+        </div>
+      </div>
+      <!-- end content -->
+      <!-- start footer -->
+      <div class="footer">
+        <div class="container">
+          <div class="footer-text">
+            <img src="images/Layer.png" alt="">
+            <p> &copy; 2022 SMD. كل الحقوق محفوظة.</p>
+            <div class="social">
+              <span class="icon"><a href="https://ar-ar.facebook.com/" target="_blank"><i
+                    class="fa fa-facebook-f"></i></a></span>
+              <span class="icon"><a href="https://twitter.com/login" target="_blank"><i
+                    class="fab fa-twitter"></i></a></span>
+              <span class="icon"><a href="https://www.youtube.com/?hl=ar" target="_blank"><i
+                    class="fab fa-youtube"></i></a></span>
+              <span class="icon"><a href="https://eg.linkedin.com/" target="_blank"><i
+                    class="fab fa-linkedin-in"></i></a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end footer -->
+</body>
+
+</html>
