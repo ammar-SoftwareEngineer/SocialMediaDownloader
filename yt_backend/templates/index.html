@@ -1,0 +1,565 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="theme-color" content="#FF8214" />
+    <!-- External file css -->
+    <link rel="stylesheet" href="{% static 'css/SMD.css' %}" />
+    <!-- file normalize css  -->
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
+    <!-- icons -->
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- font google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- icon title -->
+    <link rel="icon" href="{% static 'images/logo.svg' %}" />
+    <title>SMD</title>
+  </head>
+
+  <body>
+    <!-- start header -->
+    <header class="home-menu" id="home">
+      <div class="container">
+        <div class="logo">
+          <img
+            class="my-logo"
+            src="{% static 'images/Laye copyr.png' %}"
+            alt=""
+          />
+        </div>
+        <nav>
+          <i class="fas fa-bars toggle-button" onclick="openMenu()"></i>
+          <ul class="main-nav" id="main-nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#help">Help</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="setting one">
+              <a href="#langauge" class="click"
+                ><i class="fas fa-globe"></i> Language
+                <i class="fas fa-angle-down right"></i>
+              </a>
+              <ul>
+                <li><a href="arabic.html" class="AR">Arabic</a></li>
+                <li><a href="index.html" class="EN">English</a></li>
+              </ul>
+            </li>
+            <li class="setting two">
+              <a href="#theme"
+                ><i class="fas fa-brush"></i> Theme
+                <i class="fas fa-angle-down"></i>
+              </a>
+              <ul>
+                <li><a href="#" onclick="darkMode()">Dark</a></li>
+                <li><a href="#" onclick="lightMode()">Light</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- end  header -->
+    <!-- start landing -->
+    <div class="landing">
+      <div class="container">
+        <div class="main-text">
+          <h1>Social Media Downloader</h1>
+          <p>
+            Welcome to Social Media Downloader, where you can download, convert
+            and translate videos
+          </p>
+
+          {% if case != None %}
+          <h4 style="color: green">{{ case }}</h4>
+          {% endif %}
+
+          <form method="post">
+            {% csrf_token %} {{ form.url }}
+            <button type="submit" name="submit">
+              <i class="fas fa-arrow-alt-circle-down"></i><span> Download</span>
+            </button>
+          </form>
+        </div>
+        <div class="social">
+          <span class="icon"
+            ><a href="https://ar-ar.facebook.com/" target="_blank"
+              ><i class="fa fa-facebook-f"></i></a
+          ></span>
+          <span class="icon"
+            ><a href="https://twitter.com/login" target="_blank"
+              ><i class="fab fa-twitter"></i></a
+          ></span>
+          <span class="icon"
+            ><a href="https://eg.linkedin.com/" target="_blank"
+              ><i class="fab fa-linkedin-in"></i></a
+          ></span>
+          <span class="icon"
+            ><a href="https://www.youtube.com/?hl=ar" target="_blank"
+              ><i class="fab fa-youtube"></i></a
+          ></span>
+          <span class="icon"
+            ><a href="https://www.instagram.com/" target="_blank"
+              ><i class="fab fa-instagram"></i></a
+          ></span>
+          <span class="icon"
+            ><a href="https://accounts.snapchat.com/" target="_blank"
+              ><i class="fa fa-snapchat-ghost"></i></a
+          ></span>
+          <span class="icon"
+            ><a href="https://www.tiktok.com/ar/" target="_blank"
+              ><i class="fab fa-tiktok"></i></a
+          ></span>
+        </div>
+        <div class="download">
+          <ul>
+            <li class="down" onclick="openList1()">
+              <i class="fas fa-download"></i>DOWNLODE MP4 OR MP3
+              <i class="fas fa-arrow-circle-down one"></i>
+            </li>
+            <li class="audio" onclick="openList2()">
+              <i class="fas fa-file-audio"></i>CONVERT TO AUDIO
+              <i class="fas fa-arrow-circle-down two"></i>
+            </li>
+            <li class="trans" onclick="openList3()">
+              <i class="fas fa-language"></i>TRANSLATE VIDEO
+              <i class="fas fa-arrow-circle-down three"></i>
+            </li>
+          </ul>
+        </div>
+        <div class="quality-download">
+          <ul class="mp4">
+            <div>MP4</div>
+            <li>360P</li>
+            <li>480P</li>
+            <li>720HD</li>
+            <li>1080HD</li>
+          </ul>
+          <ul class="mp3">
+            <div>MP3</div>
+            <li>70k</li>
+            <li>128k</li>
+            <li>160k</li>
+            <li>320k</li>
+          </ul>
+        </div>
+        <div class="quality-audio">
+          <ul>
+            <div>MP3</div>
+            <li>70k</li>
+            <li>128k</li>
+            <li>160k</li>
+            <li>320k</li>
+          </ul>
+        </div>
+        <div class="quality-translate">
+          <ul class="mp4-two">
+            <div>MP4</div>
+            <li>360P</li>
+            <li>480P</li>
+            <li>720HD</li>
+            <li>1080HD</li>
+          </ul>
+          <ul class="translate">
+            <div>Translate</div>
+            <li>Arabia</li>
+            <li>English</li>
+            <li>German</li>
+            <li>Spanish</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- end landing -->
+    <!-- start help -->
+    <div class="help" id="help">
+      <div class="container">
+        <div class="text">
+          <h2>help</h2>
+          <p>Download videos from social media</p>
+        </div>
+        <div class="imgs-container">
+          <div class="box">
+            <img src="{% static 'images/help1.svg' %}" alt="" />
+            <div class="caption">
+              <h4>1. Copy the URL</h4>
+              <p>
+                Open the which social page with a video that you want to save,
+                copy its URL and go back to SMD.github
+              </p>
+            </div>
+          </div>
+          <div class="box">
+            <img src="{% static 'images/help2.svg' %}" alt="" />
+            <div class="caption">
+              <h4>2. Paste the URL onto the input field</h4>
+              <p>
+                Paste the URL of the into the input field of the top of the page
+                and click on the right side the button to run the downloading
+                process.
+              </p>
+            </div>
+          </div>
+          <div class="box">
+            <img src="{% static 'images/help4.svg' %}" alt="" />
+            <div class="caption">
+              <h4>3. Choose one of the downloads</h4>
+              <p>
+                If you want to download a video or convert it to music, or
+                translate it
+              </p>
+            </div>
+          </div>
+          <div class="box">
+            <img src="{% static 'images/help5.svg' %}" alt="" />
+            <div class="caption">
+              <h4>4. DOWNLODE MP4 OR MP3</h4>
+              <p>
+                We have high quality video or music downloads in the selection
+                download mp4 or mp3
+              </p>
+            </div>
+          </div>
+
+          <div class="box">
+            <img src="{% static 'images/help6.svg' %}" alt="" />
+            <div class="caption">
+              <h4>5. CONVERT TO ADUIO</h4>
+              <p>The video can be converted to music in high quality</p>
+            </div>
+          </div>
+
+          <div class="box">
+            <img src="{% static 'images/help7.svg' %}" alt="" />
+            <div class="caption">
+              <h4>6. TRANSLATE VIDEO</h4>
+              <p>
+                We have video downloads and subtitles in multiple languages in
+                the choice of download mp4 and subtitles and not just one choice
+              </p>
+            </div>
+          </div>
+          <div class="box">
+            <img src="{% static 'images/help3.svg' %}" alt="" />
+            <div class="caption">
+              <h4>7. Click the download button</h4>
+              <p>
+                To notice that by default the best quality will be selected but
+                if you would like a specific quality or format, there are
+                several options you can choose from.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end help  -->
+      <!-- start about -->
+      <div class="about" id="about">
+        <div class="container">
+          <div class="text">
+            <h2>About us</h2>
+            <p>
+              Knowing everything about the site and some questions about it and
+              who are the developers of the site
+            </p>
+          </div>
+          <div class="questions">
+            <h3>What questions do people want to know about the website?</h3>
+            <ul>
+              <li onclick="plusOpen()">
+                Is it possible to download videos from social media and turn
+                them into music ? <i class="fas fa-plus arrow" id="plus"></i>
+              </li>
+              <p id="my-p">Answer : is yes, and in high quality as well</p>
+              <li onclick="plusOpen1()">
+                Does the site support all languages ?
+                <i class="fas fa-plus" id="plus1"></i>
+              </li>
+              <p id="my-p1">
+                Answer : It does not support all languages but we will do it
+                soon
+              </p>
+              <li onclick="plusOpen2()">
+                How many times can I download ?
+                <i class="fas fa-plus" id="plus2"></i>
+              </li>
+              <p id="my-p2">Answer : Unlimited</p>
+              <li onclick="plusOpen3()">
+                Does the site support download quality 4k ?
+                <i class="fas fa-plus" id="plus3"></i>
+              </li>
+              <p id="my-p3">
+                Answer : It does not support 4K but we will do it soon
+              </p>
+              <li onclick="plusOpen4()">
+                How Is the website loading fast?
+                <i class="fas fa-plus" id="plus4"></i>
+              </li>
+              <p id="my-p4">
+                Answer : Yes, you can download more than one clip at the same
+                time
+              </p>
+            </ul>
+          </div>
+          <div class="images">
+            <div class="overliy"></div>
+            <img
+              src="{% static 'images/marketing-employee-working-on-marketing-strategy.svg' %}"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <!-- end about -->
+      <!-- start team -->
+      <div class="team">
+        <div class="container">
+          <h4>Meet Our Team</h4>
+        </div>
+        <div class="landing-team">
+          <div class="box">
+            <div class="container">
+              <div class="box-team">
+                <div class="team-deveolp">
+                  <img src="{% static 'images/abdalrahem.svg' %}" alt="" />
+                  <div class="size">
+                    <h5>Abdelraheem Ahmed</h5>
+                    <p>Back-End Developer</p>
+                    <span class="icon"
+                      ><a href="https://twitter.com/login" target="_blank"
+                        ><i class="fab fa-twitter"></i></a
+                    ></span>
+                    <span class="icon"
+                      ><a href="https://eg.linkedin.com/" target="_blank"
+                        ><i class="fab fa-linkedin"></i></a
+                    ></span>
+                  </div>
+                </div>
+              </div>
+              <div class="box-team">
+                <div class="team-deveolp">
+                  <img src="{% static 'images/ashref.svg' %}" alt="" />
+                  <div class="size">
+                    <h5>Ashraf Elsayed</h5>
+                    <p>Back-End Developer</p>
+                    <span class="icon"
+                      ><a href="https://twitter.com/login" target="_blank"
+                        ><i class="fab fa-twitter"></i></a
+                    ></span>
+                    <span class="icon"
+                      ><a href="https://eg.linkedin.com/" target="_blank"
+                        ><i class="fab fa-linkedin"></i></a
+                    ></span>
+                  </div>
+                </div>
+              </div>
+              <div class="box-team">
+                <div class="team-deveolp">
+                  <img src="{% static 'images/yo.svg' %}" alt="" />
+                  <div class="size">
+                    <h5>Yousef Mansour</h5>
+                    <p>Back-End Developer</p>
+                    <span class="icon"
+                      ><a href="https://twitter.com/login" target="_blank"
+                        ><i class="fab fa-twitter"></i></a
+                    ></span>
+                    <span class="icon"
+                      ><a href="https://eg.linkedin.com/" target="_blank"
+                        ><i class="fab fa-linkedin"></i></a
+                    ></span>
+                  </div>
+                </div>
+              </div>
+              <div class="box-team">
+                <div class="team-deveolp">
+                  <img src="{% static 'images/jo.svg' %}" alt="" />
+                  <div class="size">
+                    <h5>Joseph Rasla</h5>
+                    <p>Back-End Developer</p>
+                    <span class="icon"
+                      ><a href="https://twitter.com/login" target="_blank"
+                        ><i class="fab fa-twitter"></i></a
+                    ></span>
+                    <span class="icon"
+                      ><a href="https://eg.linkedin.com/" target="_blank"
+                        ><i class="fab fa-linkedin"></i></a
+                    ></span>
+                  </div>
+                </div>
+              </div>
+              <div class="box-team">
+                <div class="team-deveolp">
+                  <img src="{% static 'images/ammar.svg' %}" alt="" />
+                  <div class="size">
+                    <h5>Ammar Yasser</h5>
+                    <p>Front-End Developer
+                      <br>
+                    & UX/UI Design
+                    </p>
+                    <span class="icon"
+                      ><a href="https://twitter.com/login" target="_blank"
+                        ><i class="fab fa-twitter"></i></a
+                    ></span>
+                    <span class="icon"
+                      ><a href="https://eg.linkedin.com/" target="_blank"
+                        ><i class="fab fa-linkedin"></i></a
+                    ></span>
+                  </div>
+                </div>
+              </div>
+              <div class="box-team">
+                <div class="team-deveolp">
+                  <img src="{% static 'images/ahmed.svg' %}" alt="" />
+                  <div class="size">
+                    <h5>Ahmed Ashraf</h5>
+                    <p>Front-End Developer</p>
+                    <span class="icon"
+                      ><a href="https://twitter.com/login" target="_blank"
+                        ><i class="fab fa-twitter"></i></a
+                    ></span>
+                    <span class="icon"
+                      ><a href="https://eg.linkedin.com/" target="_blank"
+                        ><i class="fab fa-linkedin"></i></a
+                    ></span>
+                  </div>
+                </div>
+              </div>
+              <div class="box-team">
+                <div class="team-deveolp">
+                  <img src="{% static 'images/Ali.svg' %}" alt="" />
+                  <div class="size">
+                    <h5>Ali Mohamed</h5>
+                    <p>Front-End Developer</p>
+                    <span class="icon"
+                      ><a href="https://twitter.com/login" target="_blank"
+                        ><i class="fab fa-twitter"></i></a
+                    ></span>
+                    <span class="icon"
+                      ><a href="https://eg.linkedin.com/" target="_blank"
+                        ><i class="fab fa-linkedin"></i></a
+                    ></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end team -->
+        <!-- start content -->
+        <div class="contact" id="contact">
+          <div class="container">
+            <div class="text">
+              <h2>Contact Us</h2>
+              <p>
+                Sharing your opinion on the website makes it easier for us to
+                help you and develop ourselves
+              </p>
+            </div>
+
+            <div class="content">
+              <form action="">
+                <input
+                  class="main-input"
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                />
+                <input
+                  class="main-input"
+                  type="email"
+                  name="mail"
+                  placeholder="Your Email"
+                />
+                <textarea
+                  class="main-input"
+                  name="message"
+                  placeholder="Your Message"
+                ></textarea>
+                <input type="submit" value="Send Message" />
+              </form>
+              <div class="info">
+                <h4>Get In Touch</h4>
+                <span class="phone">+00 123.456.789</span>
+                <span class="phone">+00 123.456.789</span>
+                <h4>WHERE WE ARE</h4>
+                <address>
+                  32 Ismailia Desert Rd
+                  <br />
+                  Elobour - Cairo
+                  <br />
+                  Arab Republic Of Egypt.
+                </address>
+              </div>
+            </div>
+            <div class="social">
+              <span class="icon"
+                ><a href="#" target="_blank"
+                  ><i class="material-icons">phone</i></a
+                ></span
+              >
+              <p>Phone</p>
+              <span class="icon"
+                ><a href="#" target="_blank"
+                  ><i class="material-icons">whatsapp</i></a
+                ></span
+              >
+              <p>Whatsapp</p>
+              <span class="icon"
+                ><a href="#" target="_blank"
+                  ><i class="material-icons">mail</i></a
+                ></span
+              >
+              <p>Email</p>
+            </div>
+          </div>
+        </div>
+        <!-- end content -->
+        <!-- start footer -->
+        <div class="footer">
+          <div class="container">
+            <div class="footer-text">
+              <img src="{% static 'images/Layer.png' %}" alt="" />
+              <p>&copy; 2022 SMD. All Rights Reserved.</p>
+              <div class="social">
+                <span class="icon"
+                  ><a href="https://ar-ar.facebook.com/" target="_blank"
+                    ><i class="fa fa-facebook-f"></i></a
+                ></span>
+                <span class="icon"
+                  ><a href="https://twitter.com/login" target="_blank"
+                    ><i class="fab fa-twitter"></i></a
+                ></span>
+                <span class="icon"
+                  ><a href="https://www.youtube.com/?hl=ar" target="_blank"
+                    ><i class="fab fa-youtube"></i></a
+                ></span>
+                <span class="icon"
+                  ><a href="https://eg.linkedin.com/" target="_blank"
+                    ><i class="fab fa-linkedin-in"></i></a
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="{% static 'js/main.js' %}"></script>
+    <!-- end footer -->
+  </body>
+</html>
